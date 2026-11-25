@@ -32,6 +32,7 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 #live [style*="overflow-x: auto"] > div{flex:1 1 auto !important;width:100% !important}
 #live video{width:100% !important;height:auto !important;max-height:78vh}
 }
+.fb-plat a{padding:6px 0}.fb-plat a:hover{color:#73572A !important}
 .fb-song-title{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;cursor:pointer;transition:color .2s ease}
 .fb-song-title:hover,.fb-song-title:focus-visible{color:#73572A;outline:none}
 @media (max-width: 700px){
@@ -192,7 +193,7 @@ header.fb-header.is-hidden{transform:translateY(-102%)}
 <div style="max-width: 1280px; margin: 0 auto; padding: 110px 32px; display: flex; flex-direction: column; gap: 40px;">
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; justify-content: space-between;">
 <h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 500; font-size: 56px; line-height: 1; text-transform: uppercase; letter-spacing: 0.01em;">Musique · commencez ici</h2>
-<p style="margin: 0; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B655D;">Spotify · Apple Music · YouTube Music</p>
+<p class="fb-plat" style="margin: 0; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B655D; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px;"><a href="https://open.spotify.com/artist/5iEFhVcNVsdIrENWh8LcCi" target="_blank" rel="noopener" style="color: #4A463F; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #C9A46A;">Spotify</a><span>·</span><a href="https://music.apple.com/us/artist/funkinbiz/1552202373" target="_blank" rel="noopener" style="color: #4A463F; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #C9A46A;">Apple Music</a><span>·</span><a href="https://www.youtube.com/@funkinbiz" target="_blank" rel="noopener" style="color: #4A463F; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #C9A46A;">YouTube</a></p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid #CFC8BB;">
 <div style="color: #141414; display: flex; flex-direction: column; gap: 12px; padding: 28px 24px 28px 0; border-bottom: 1px solid #CFC8BB;">
@@ -272,7 +273,7 @@ header.fb-header.is-hidden{transform:translateY(-102%)}
 <div style="max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px;">
 <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
 <h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 500; font-size: 72px; line-height: 1; text-transform: uppercase;">Booking</h2>
-<p style="margin: 0; font-size: 19px; color: #3A3733;">Dites-nous la date, le lieu et l’ambiance. Nous répondons sous deux jours.</p>
+<p style="margin: 0; font-size: 19px; color: #3A3733;">Dites-nous la date, le lieu et l’ambiance. Nous répondons sous 24 heures.</p>
 <a href="mailto:booking@funkinbiz.com" style="font-family: Oswald, sans-serif; font-size: 20px; color: #73572A;">booking@funkinbiz.com</a>
 <a href="https://t.me/funkinbiz" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; background: #141414; color: #EFEAE0; text-decoration: none; font-size: 15px; font-weight: 500; letter-spacing: 0.04em;">Écrire sur Telegram <span style="color: #C9A46A;">@funkinbiz</span></a>
 <a href="https://www.instagram.com/funkinbiz/" style="font-size: 15px; color: #3A3733;">Instagram @funkinbiz</a>
@@ -308,7 +309,7 @@ document.querySelectorAll('details.fb-listen[open]').forEach(function(d){if(d!==
 if(mine){if(mine.hasAttribute('open'))mine.removeAttribute('open');else mine.setAttribute('open','')}}
 document.addEventListener('click',listen);
 document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('fb-song-title')){e.preventDefault();listen(e)}});
-var MSG={"sending": "Envoi…", "ok": "Merci ! Votre demande est envoyée. Nous répondons sous deux jours.", "err": "Un problème est survenu. Écrivez à booking@funkinbiz.com ou sur Telegram @funkinbiz.", "missing": "Merci d’indiquer votre nom et votre e-mail."};
+var MSG={"sending": "Envoi…", "ok": "Merci ! Votre demande est envoyée. Nous répondons sous 24 heures.", "err": "Un problème est survenu. Écrivez à booking@funkinbiz.com ou sur Telegram @funkinbiz.", "missing": "Merci d’indiquer votre nom et votre e-mail."};
 var sr=document.getElementById('send-request'),st=document.getElementById('form-status');
 if(sr){sr.addEventListener('click',function(){function g(id){var el=document.getElementById(id);return el?(el.value||'').trim():''}
 var n=g('fb-name'),em=g('fb-email'),d=g('fb-date'),c=g('fb-city'),f=g('fb-format'),no=g('fb-notes');
