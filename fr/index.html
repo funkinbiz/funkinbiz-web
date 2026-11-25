@@ -257,7 +257,8 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A463F; grid-column: 1 / -1;">Formule<select id="fb-format" style="min-height: 48px; padding: 0 14px; border: 1px solid #141414; background: transparent; font: inherit; font-size: 16px; text-transform: none; letter-spacing: 0;"><option>Trio</option><option>Formation complète</option><option>Solo</option><option>Pas encore décidé</option></select></label>
 <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #4A463F; grid-column: 1 / -1;">Parlez-nous de la soirée<textarea id="fb-notes" rows="4" style="padding: 12px 14px; border: 1px solid #141414; background: transparent; font: inherit; font-size: 16px; text-transform: none; letter-spacing: 0;"></textarea></label>
 <button type="button" id="send-request" style="grid-column: 1 / -1; justify-self: start; min-height: 52px; padding: 0 32px; border: 0; background: #141414; color: #EFEAE0; font-family: Oswald, sans-serif; font-weight: 500; font-size: 17px; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer;">Envoyer la demande</button>
-<p style="grid-column: 1 / -1; margin: 0; font-size: 13px; color: #6B655D;">Le bouton ouvre un e-mail vers booking@funkinbiz.com avec vos informations déjà remplies.</p>
+<p id="form-status" role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0; font-size: 16px; font-weight: 500; color: #141414;"></p>
+<p style="grid-column: 1 / -1; margin: 0; font-size: 13px; color: #6B655D;">Votre demande arrive directement à booking@funkinbiz.com.</p>
 </form>
 </div>
 </section>
@@ -279,12 +280,16 @@ document.querySelectorAll('details.fb-listen[open]').forEach(function(d){if(d!==
 if(mine){if(mine.hasAttribute('open'))mine.removeAttribute('open');else mine.setAttribute('open','')}}
 document.addEventListener('click',listen);
 document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('fb-song-title')){e.preventDefault();listen(e)}});
-var sr=document.getElementById('send-request');
+var MSG={"sending": "Envoi…", "ok": "Merci ! Votre demande est envoyée. Nous répondons sous deux jours.", "err": "Un problème est survenu. Écrivez à booking@funkinbiz.com ou sur Telegram @funkinbiz.", "missing": "Merci d’indiquer votre nom et votre e-mail."};
+var sr=document.getElementById('send-request'),st=document.getElementById('form-status');
 if(sr){sr.addEventListener('click',function(){function g(id){var el=document.getElementById(id);return el?(el.value||'').trim():''}
 var n=g('fb-name'),em=g('fb-email'),d=g('fb-date'),c=g('fb-city'),f=g('fb-format'),no=g('fb-notes');
-var subj="Demande de booking : "+(f||'Funkinbiz')+(d?', '+d:'')+(c?', '+c:'');
-var body=['Name: '+n,'Email: '+em,'Date: '+d,'City and venue: '+c,'Format: '+f,'','About the evening:',no].join('\n');
-window.location.href='mailto:booking@funkinbiz.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);});}
+if(!n||!em||em.indexOf('@')<1){st.textContent=MSG.missing;return}
+sr.disabled=true;st.textContent=MSG.sending;
+fetch('https://formsubmit.co/ajax/booking@funkinbiz.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+body:JSON.stringify({name:n,email:em,date:d,city_and_venue:c,format:f,message:no,language:'fr',_subject:'Booking request: '+(f||'Funkinbiz')+(d?', '+d:'')+(c?', '+c:''),_template:'table',_captcha:'false',_replyto:em})})
+.then(function(r){return r.json()}).then(function(j){if(String(j.success)==='true'){st.textContent=MSG.ok;['fb-name','fb-email','fb-date','fb-city','fb-notes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''})}else{st.textContent=MSG.err;sr.disabled=false}})
+.catch(function(){st.textContent=MSG.err;sr.disabled=false});});}
 })();
 </script>
 </body>
