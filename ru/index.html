@@ -45,19 +45,46 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 }
 @media (max-width: 960px){.fb-quotes3{grid-template-columns:1fr !important;gap:32px !important}}
 @media (max-width: 700px){.fb-dot{display:none !important}.fb-bigquote{font-size:44px !important}h2{font-size:48px !important}}
+.fb-langdd,.fb-tabs{display:none}
+@media (max-width: 700px){
+header.fb-header{position:sticky;top:0;z-index:40;background:#0D0D0E;display:grid !important;grid-template-columns:1fr auto;align-items:center;column-gap:10px !important;row-gap:14px !important;padding:14px 18px 12px !important;border-bottom:1px solid #2A2826;max-width:none !important}
+header.fb-header nav[aria-label="Main"]{display:contents !important}
+header.fb-header > a{grid-column:1;grid-row:1}
+header.fb-header > a svg{height:24px !important}
+header.fb-header .fb-lang{display:none !important}
+.fb-langdd{display:block;position:relative;grid-column:2;grid-row:1;justify-self:end}
+.fb-tabs{display:flex;align-items:center;gap:16px;grid-column:1;grid-row:2;min-width:0}
+header.fb-header nav[aria-label="Main"] > a[href="#booking"]{grid-column:2;grid-row:2;padding:8px 10px !important;min-height:38px !important;font-size:12px;letter-spacing:.06em}
+header.fb-header.is-scrolled{padding:8px 14px !important}
+header.fb-header.is-scrolled > a{display:none !important}
+header.fb-header.is-scrolled .fb-tabs{grid-row:1}
+header.fb-header.is-scrolled .fb-langdd{display:none}
+header.fb-header.is-scrolled nav[aria-label="Main"] > a[href="#booking"]{grid-column:2;grid-row:1;padding:7px 10px !important;min-height:36px !important;font-size:12px}
+.fb-langdd summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;box-sizing:border-box;padding:0 10px;border:1px solid #3A3835;color:#C9A46A;font-size:13px;letter-spacing:.08em;-webkit-tap-highlight-color:transparent}
+.fb-langdd summary::-webkit-details-marker{display:none}
+.fb-langdd summary span{font-size:9px;color:#8E8880}
+.fb-langdd-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:60;display:flex;flex-direction:column;min-width:160px;background:#141414;padding:6px 0;box-shadow:0 12px 32px rgba(0,0,0,.45);text-transform:none;letter-spacing:0}
+.fb-langdd-menu a,.fb-langdd-menu span{padding:12px 18px;font-size:15px;color:#EFEAE0;text-decoration:none}
+.fb-langdd-menu span{color:#C9A46A}
+.fb-tabs a{font-size:min(12.5px,3.25vw);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#EFEAE0;padding:8px 0;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.fb-tabs a.is-active{color:#C9A46A;box-shadow:inset 0 -1px 0 #C9A46A}
+#live,#music,#about,#booking{scroll-margin-top:72px}
+}
+@media (max-width: 380px){.fb-tabs{gap:9px}.fb-tabs a{font-size:3vw;letter-spacing:.03em}}
 </style>
 </head>
 <body style="margin: 0; background: #0D0D0E;">
 <div style="width: 100%; background: #0D0D0E; color: #EFEAE0; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.55;">
-<header style="max-width: 1280px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;">
+<header class="fb-header" style="max-width: 1280px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;">
 <a href="#top" aria-label="Funkinbiz, to the top" style="display: inline-block; text-decoration: none;"><svg aria-hidden="true" focusable="false" viewBox="0 -705 3748 720" style="display: block; height: 30px; width: auto;"><g transform="scale(1,-1)" fill="#EFEAE0"><path transform="translate(0,0)" d="M25 0H175V345H380V355H175V690H380V700H25Z"/><path transform="translate(405,0)" d="M380 177V380H370V177C370 84 295 10 202 10C187 10 175 83 175 176V380H25V176C25 78 104 0 202 0C300 0 380 79 380 177Z"/><path transform="translate(810,0)" d="M355 380C272 380 201 326 175 251V380H25V0H175V197C179 293 259 370 355 370C377 370 395 289 395 190V0H545V190C545 294 455 380 355 380Z"/><path transform="translate(1380,0)" d="M338 380H327L175 97V700H25V0H175V97L227 0H405L270 253Z"/><path transform="translate(1810,0)" d="M175 380H25V0H175ZM25 475C25 434 59 400 100 400C141 400 175 434 175 475C175 516 141 550 100 550C59 550 25 516 25 475Z"/><path transform="translate(2010,0)" d="M355 380C272 380 201 326 175 251V380H25V0H175V197C179 293 259 370 355 370C377 370 395 289 395 190V0H545V190C545 294 455 380 355 380Z"/><path transform="translate(2580,0)" d="M175 31C205 11 241 0 279 0C384 0 469 85 469 190C469 295 384 380 279 380C241 380 205 368 175 349V700H25V0H175ZM279 10C241 10 205 22 175 43V336C205 357 241 370 279 370C301 370 319 289 319 190C319 91 301 10 279 10Z"/><path transform="translate(3074,0)" d="M175 380H25V0H175ZM25 475C25 434 59 400 100 400C141 400 175 434 175 475C175 516 141 550 100 550C59 550 25 516 25 475Z"/><path transform="translate(3274,0)" d="M25 0H409V10H210L409 380H25V370H223Z"/></g></svg></a>
 <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;">
 <a class="fb-nav-secondary" href="#live" style="text-decoration: none;">Концерты</a>
 <a class="fb-nav-secondary" href="#music" style="text-decoration: none;">Музыка</a>
 <a class="fb-nav-secondary" href="#about" style="text-decoration: none;">О проекте</a>
-<span class="fb-lang" style="display: inline-flex; gap: 10px; color: #5A5650;"><a href="/" style="text-decoration: none; color: #8E8880;">EN</a> · <span style="color: #C9A46A;">RU</span> · <a href="/lv/" style="text-decoration: none; color: #8E8880;">LV</a> · <a href="/fr/" style="text-decoration: none; color: #8E8880;">FR</a></span>
+<span class="fb-lang" style="display: inline-flex; gap: 10px; color: #5A5650;"><a href="/" style="text-decoration: none; color: #8E8880;">EN</a> · <span style="color: #C9A46A;">RU</span> · <a href="/lv/" style="text-decoration: none; color: #8E8880;">LV</a> · <a href="/fr/" style="text-decoration: none; color: #8E8880;">FR</a></span><details class="fb-langdd"><summary aria-label="Language: Русский">RU <span>▼</span></summary><div class="fb-langdd-menu"><a href="/" lang="en">English</a><span>Русский ✓</span><a href="/lv/" lang="lv">Latviešu</a><a href="/fr/" lang="fr">Français</a></div></details>
 <a href="#booking" style="text-decoration: none; border: 1px solid #EFEAE0; padding: 12px 20px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center;">Букинг</a>
 </nav>
+<nav class="fb-tabs" aria-label="Sections"><a href="#live">Концерты</a><a href="#music">Музыка</a><a href="#about">О проекте</a></nav>
 </header>
 
 <section id="top" class="fb-hero" style="position: relative; min-height: 820px; overflow: hidden; display: flex; align-items: flex-end;">
@@ -290,6 +317,14 @@ fetch('https://formsubmit.co/ajax/booking@funkinbiz.com',{method:'POST',headers:
 body:JSON.stringify({name:n,email:em,date:d,city_and_venue:c,format:f,message:no,language:'ru',_subject:'Booking request: '+(f||'Funkinbiz')+(d?', '+d:'')+(c?', '+c:''),_template:'table',_captcha:'false',_replyto:em})})
 .then(function(r){return r.json()}).then(function(j){if(String(j.success)==='true'){st.textContent=MSG.ok;['fb-name','fb-email','fb-date','fb-city','fb-notes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''})}else{st.textContent=MSG.err;sr.disabled=false}})
 .catch(function(){st.textContent=MSG.err;sr.disabled=false});});}
+var hd=document.querySelector('header.fb-header');
+function onScroll(){if(hd)hd.classList.toggle('is-scrolled',window.scrollY>40)}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.addEventListener('click',function(e){document.querySelectorAll('details.fb-langdd[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+var tabs=[].slice.call(document.querySelectorAll('.fb-tabs a'));
+function act(){var y=window.scrollY+140,cur=null;tabs.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&s.offsetTop<=y)cur=a});
+var bk=document.getElementById('booking');if(bk&&bk.offsetTop<=y)cur=null;tabs.forEach(function(a){a.classList.toggle('is-active',a===cur)})}
+window.addEventListener('scroll',act,{passive:true});act();
 })();
 </script>
 </body>
