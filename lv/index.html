@@ -47,7 +47,7 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 @media (max-width: 700px){.fb-dot{display:none !important}.fb-bigquote{font-size:44px !important}h2{font-size:48px !important}}
 .fb-langdd,.fb-tabs{display:none}
 @media (max-width: 700px){
-header.fb-header{position:sticky;top:0;z-index:40;background:#0D0D0E;display:grid !important;grid-template-columns:1fr auto;align-items:center;column-gap:10px !important;row-gap:14px !important;padding:14px 18px 12px !important;border-bottom:1px solid #2A2826;max-width:none !important}
+header.fb-header{position:sticky;top:0;z-index:40;background:#0D0D0E;transition:transform .28s ease;display:grid !important;grid-template-columns:1fr auto;align-items:center;column-gap:10px !important;row-gap:14px !important;padding:14px 18px 12px !important;border-bottom:1px solid #2A2826;max-width:none !important}
 header.fb-header nav[aria-label="Main"]{display:contents !important}
 header.fb-header > a{grid-column:1;grid-row:1}
 header.fb-header > a svg{height:24px !important}
@@ -68,7 +68,8 @@ header.fb-header.is-scrolled nav[aria-label="Main"] > a[href="#booking"]{grid-co
 .fb-langdd-menu span{color:#C9A46A}
 .fb-tabs a{font-size:min(12.5px,3.25vw);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:#EFEAE0;padding:8px 0;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .fb-tabs a.is-active{color:#C9A46A;box-shadow:inset 0 -1px 0 #C9A46A}
-#live,#music,#about,#booking{scroll-margin-top:72px}
+header.fb-header.is-hidden{transform:translateY(-102%)}
+#live,#music,#about,#booking{scroll-margin-top:8px}
 }
 @media (max-width: 380px){.fb-tabs{gap:9px}.fb-tabs a{font-size:3vw;letter-spacing:.03em}}
 </style>
@@ -90,7 +91,7 @@ header.fb-header.is-scrolled nav[aria-label="Main"] > a[href="#booking"]{grid-co
 <section id="top" class="fb-hero" style="position: relative; min-height: 820px; overflow: hidden; display: flex; align-items: flex-end;">
 <video src="/media/trailer.mp4" poster="/media/trailer-poster.jpg" id="hero-video" autoplay muted loop playsinline preload="auto" aria-label="Funkinbiz trailer: a figure in a glowing square, musicians in teal, yellow and pink light, Kirill in neon" class="fb-hero-img fb-hero-vid" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; background: #0D0D0E;"></video>
 <div aria-hidden="true" class="fb-hero-shade" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,14,0.95) 0%, rgba(13,13,14,0.55) 38%, rgba(13,13,14,0.05) 75%), linear-gradient(to right, rgba(13,13,14,0.55) 0%, rgba(13,13,14,0) 55%); pointer-events: none;"></div>
-<button type="button" id="hero-sound" aria-label="Atskaņot treileri no sākuma ar skaņu" data-aria-on="Atskaņot treileri no sākuma ar skaņu" data-aria-off="Izslēgt treilera skaņu" class="fb-hero-sound" style="position: absolute; right: 32px; bottom: 88px; z-index: 2; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 20px; background: rgba(13,13,14,0.55); color: #EFEAE0; border: 1px solid #C9A46A; font-family: Inter, sans-serif; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; backdrop-filter: blur(6px);"><span id="hs-icon" style="color: #C9A46A; font-size: 15px;">▶</span><span id="hs-label">Ieslēgt skaņu</span></button>
+<button type="button" id="hero-sound" aria-label="Atskaņot treileri no sākuma ar skaņu" data-aria-on="Atskaņot treileri no sākuma ar skaņu" data-aria-off="Izslēgt treilera skaņu" class="fb-hero-sound" style="position: absolute; right: 32px; bottom: 88px; z-index: 2; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 16px; background: rgba(13,13,14,0.55); color: #EFEAE0; border: 1px solid rgba(239,234,224,0.35); font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; backdrop-filter: blur(6px);"><span class="fb-snd-off" id="hs-off" style="display:inline-flex"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg></span><span class="fb-snd-on" id="hs-on" style="display:none"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" stroke="#C9A46A"/></svg></span><span id="hs-label">Ieslēgt skaņu</span></button>
 <div class="fb-hero-text" style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 160px 32px 88px; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px;">
 <p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A46A;">Avangarda popmūzika no Baltijas</p>
 <h1 style="margin: 0; position: relative;"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Funkinbiz</span><svg aria-hidden="true" focusable="false" viewBox="0 -705 3748 720" style="display: block; width: clamp(280px, 46vw, 680px); height: auto;"><g transform="scale(1,-1)" fill="#C9A46A"><path transform="translate(0,0)" d="M25 0H175V345H380V355H175V690H380V700H25Z"/><path transform="translate(405,0)" d="M380 177V380H370V177C370 84 295 10 202 10C187 10 175 83 175 176V380H25V176C25 78 104 0 202 0C300 0 380 79 380 177Z"/><path transform="translate(810,0)" d="M355 380C272 380 201 326 175 251V380H25V0H175V197C179 293 259 370 355 370C377 370 395 289 395 190V0H545V190C545 294 455 380 355 380Z"/><path transform="translate(1380,0)" d="M338 380H327L175 97V700H25V0H175V97L227 0H405L270 253Z"/><path transform="translate(1810,0)" d="M175 380H25V0H175ZM25 475C25 434 59 400 100 400C141 400 175 434 175 475C175 516 141 550 100 550C59 550 25 516 25 475Z"/><path transform="translate(2010,0)" d="M355 380C272 380 201 326 175 251V380H25V0H175V197C179 293 259 370 355 370C377 370 395 289 395 190V0H545V190C545 294 455 380 355 380Z"/><path transform="translate(2580,0)" d="M175 31C205 11 241 0 279 0C384 0 469 85 469 190C469 295 384 380 279 380C241 380 205 368 175 349V700H25V0H175ZM279 10C241 10 205 22 175 43V336C205 357 241 370 279 370C301 370 319 289 319 190C319 91 301 10 279 10Z"/><path transform="translate(3074,0)" d="M175 380H25V0H175ZM25 475C25 434 59 400 100 400C141 400 175 434 175 475C175 516 141 550 100 550C59 550 25 516 25 475Z"/><path transform="translate(3274,0)" d="M25 0H409V10H210L409 380H25V370H223Z"/></g></svg></h1>
@@ -299,9 +300,9 @@ header.fb-header.is-scrolled nav[aria-label="Main"] > a[href="#booking"]{grid-co
 </div>
 <script>
 (function(){
-var v=document.getElementById('hero-video'),b=document.getElementById('hero-sound'),ic=document.getElementById('hs-icon'),lb=document.getElementById('hs-label'),on=false;
+var v=document.getElementById('hero-video'),b=document.getElementById('hero-sound'),hoff=document.getElementById('hs-off'),hon=document.getElementById('hs-on'),lb=document.getElementById('hs-label'),on=false;
 var L=["Ieslēgt skaņu", "Izslēgt skaņu"];
-if(b&&v){b.addEventListener('click',function(){on=!on;if(on){v.muted=false;v.volume=1;try{v.currentTime=0}catch(e){}}else{v.muted=true}var p=v.play();if(p&&p.catch)p.catch(function(){});ic.textContent=on?'■':'▶';lb.textContent=on?L[1]:L[0];b.setAttribute('aria-label',on?b.dataset.ariaOff:b.dataset.ariaOn);});}
+if(b&&v){b.addEventListener('click',function(){on=!on;if(on){v.muted=false;v.volume=1;try{v.currentTime=0}catch(e){}}else{v.muted=true}var p=v.play();if(p&&p.catch)p.catch(function(){});hoff.style.display=on?'none':'inline-flex';hon.style.display=on?'inline-flex':'none';lb.textContent=on?L[1]:L[0];b.setAttribute('aria-label',on?b.dataset.ariaOff:b.dataset.ariaOn);});}
 function listen(e){var t=e.target.closest?e.target.closest('.fb-song-title'):null;var mine=t?t.parentElement.querySelector('details.fb-listen'):null;
 document.querySelectorAll('details.fb-listen[open]').forEach(function(d){if(d!==mine&&!d.contains(e.target))d.removeAttribute('open')});
 if(mine){if(mine.hasAttribute('open'))mine.removeAttribute('open');else mine.setAttribute('open','')}}
@@ -318,7 +319,11 @@ body:JSON.stringify({name:n,email:em,date:d,city_and_venue:c,format:f,message:no
 .then(function(r){return r.json()}).then(function(j){if(String(j.success)==='true'){st.textContent=MSG.ok;['fb-name','fb-email','fb-date','fb-city','fb-notes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''})}else{st.textContent=MSG.err;sr.disabled=false}})
 .catch(function(){st.textContent=MSG.err;sr.disabled=false});});}
 var hd=document.querySelector('header.fb-header');
-function onScroll(){if(hd)hd.classList.toggle('is-scrolled',window.scrollY>40)}
+var lastY=window.scrollY;
+function onScroll(){if(!hd)return;var y=window.scrollY;hd.classList.toggle('is-scrolled',y>40);
+var dd=hd.querySelector('details.fb-langdd[open]');
+if(y<120||dd){hd.classList.remove('is-hidden')}else if(y>lastY+6){hd.classList.add('is-hidden')}else if(y<lastY-6){hd.classList.remove('is-hidden')}
+if(Math.abs(y-lastY)>6)lastY=y}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.addEventListener('click',function(e){document.querySelectorAll('details.fb-langdd[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
 var tabs=[].slice.call(document.querySelectorAll('.fb-tabs a'));
