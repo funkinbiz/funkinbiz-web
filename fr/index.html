@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="en" href="https://funkinbiz.com/"><link rel="alternate" hreflang="ru" href="https://funkinbiz.com/ru/"><link rel="alternate" hreflang="lv" href="https://funkinbiz.com/lv/"><link rel="alternate" hreflang="fr" href="https://funkinbiz.com/fr/"><link rel="alternate" hreflang="x-default" href="https://funkinbiz.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;family=Playfair+Display:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#0D0D0E}
 a{color:#EFEAE0}a:hover{color:#C9A46A}
@@ -22,10 +22,17 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 .fb-listen summary{list-style:none;cursor:pointer;font-size:14px;text-decoration:underline;padding:6px 0}
 .fb-listen summary::-webkit-details-marker{display:none}
 .fb-listen-menu{display:none;position:absolute;left:0;top:100%;z-index:20;flex-direction:column;min-width:190px;background:#141414;padding:6px 0;box-shadow:0 12px 32px rgba(0,0,0,.28)}
-.fb-listen[open] .fb-listen-menu,.fb-listen:hover .fb-listen-menu{display:flex}
+.fb-listen[open] .fb-listen-menu{display:flex}
+@media (hover:hover){.fb-listen:hover .fb-listen-menu{display:flex}}
 .fb-listen-menu a{color:#EFEAE0 !important;padding:11px 18px;font-size:14px;letter-spacing:0.02em;text-decoration:none}
 .fb-listen-menu a:hover{background:#2A2826;color:#C9A46A !important}
-.fb-song-title{cursor:pointer;transition:color .2s ease}
+@media (max-width: 700px){
+.fb-listen-menu{position:static !important;box-shadow:none !important;margin-top:8px}
+#live [style*="overflow-x: auto"]{flex-direction:column !important;overflow:visible !important;gap:28px !important}
+#live [style*="overflow-x: auto"] > div{flex:1 1 auto !important;width:100% !important}
+#live video{width:100% !important;height:auto !important;max-height:78vh}
+}
+.fb-song-title{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;cursor:pointer;transition:color .2s ease}
 .fb-song-title:hover,.fb-song-title:focus-visible{color:#73572A;outline:none}
 @media (max-width: 700px){
 .fb-hero{display:block !important;min-height:0 !important}
@@ -60,7 +67,7 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 <div class="fb-hero-text" style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 160px 32px 88px; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px;">
 <p style="margin: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A46A;">Avant-pop venu de la Baltique</p>
 <h1 style="margin: 0; position: relative;"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Funkinbiz</span><svg aria-hidden="true" focusable="false" viewBox="0 -705 3748 720" style="display: block; width: clamp(280px, 46vw, 680px); height: auto;"><g transform="scale(1,-1)" fill="#C9A46A"><path transform="translate(0,0)" d="M25 0H175V345H380V355H175V690H380V700H25Z"/><path transform="translate(405,0)" d="M380 177V380H370V177C370 84 295 10 202 10C187 10 175 83 175 176V380H25V176C25 78 104 0 202 0C300 0 380 79 380 177Z"/><path transform="translate(810,0)" d="M355 380C272 380 201 326 175 251V380H25V0H175V197C179 293 259 370 355 370C377 370 395 289 395 190V0H545V190C545 294 455 380 355 380Z"/><path transform="translate(1380,0)" d="M338 380H327L175 97V700H25V0H175V97L227 0H405L270 253Z"/><path transform="translate(1810,0)" d="M175 380H25V0H175ZM25 475C25 434 59 400 100 400C141 400 175 434 175 475C175 516 141 550 100 550C59 550 25 516 25 475Z"/><path transform="translate(2010,0)" d="M355 380C272 380 201 326 175 251V380H25V0H175V197C179 293 259 370 355 370C377 370 395 289 395 190V0H545V190C545 294 455 380 355 380Z"/><path transform="translate(2580,0)" d="M175 31C205 11 241 0 279 0C384 0 469 85 469 190C469 295 384 380 279 380C241 380 205 368 175 349V700H25V0H175ZM279 10C241 10 205 22 175 43V336C205 357 241 370 279 370C301 370 319 289 319 190C319 91 301 10 279 10Z"/><path transform="translate(3074,0)" d="M175 380H25V0H175ZM25 475C25 434 59 400 100 400C141 400 175 434 175 475C175 516 141 550 100 550C59 550 25 516 25 475Z"/><path transform="translate(3274,0)" d="M25 0H409V10H210L409 380H25V370H223Z"/></g></svg></h1>
-<p style="margin: 0; max-width: 560px; font-family: 'Instrument Serif', serif; font-size: 34px; line-height: 1.2; color: #D9D3C8;">Dans toutes les langues. Entendu de Riga à Paris.</p>
+<p style="margin: 0; max-width: 560px; font-family: 'Instrument Serif', 'Playfair Display', serif; font-size: 34px; line-height: 1.2; color: #D9D3C8;">Dans toutes les langues. Entendu de Riga à Paris.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
 <a href="#live" style="text-decoration: none; background: #EFEAE0; color: #0D0D0E; padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Regarder</a>
 <a href="#booking" style="text-decoration: none; border: 1px solid #EFEAE0; padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Booking</a>
@@ -71,20 +78,20 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 <section aria-label="Ce qu’on dit de nous" style="border-top: 1px solid #2A2826;">
 <div style="max-width: 1280px; margin: 0 auto; padding: 96px 32px 64px; display: flex; flex-direction: column; gap: 48px;">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; max-width: 1000px;">
-<blockquote class="fb-bigquote" style="margin: 0; font-family: 'Instrument Serif', serif; font-style: normal; font-size: 68px; line-height: 1.05; letter-spacing: -0.005em;">“Quand la Baltique murmure en français.”</blockquote>
+<blockquote class="fb-bigquote" style="margin: 0; font-family: 'Instrument Serif', 'Playfair Display', serif; font-style: normal; font-size: 68px; line-height: 1.05; letter-spacing: -0.005em;">“Quand la Baltique murmure en français.”</blockquote>
 <figcaption style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8E8880;">Extravafrench</figcaption>
 </figure>
 <div class="fb-quotes3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px;">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-<blockquote style="margin: 0; font-family: 'Instrument Serif', serif; font-style: normal; font-size: 38px; line-height: 1.15;">« Une œuvre véritablement avant-gardiste. »</blockquote>
+<blockquote style="margin: 0; font-family: 'Instrument Serif', 'Playfair Display', serif; font-style: normal; font-size: 38px; line-height: 1.15;">« Une œuvre véritablement avant-gardiste. »</blockquote>
 <figcaption style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8E8880;">Nikita Matveev, Radio SWH+</figcaption>
 </figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-<blockquote style="margin: 0; font-family: 'Instrument Serif', serif; font-style: normal; font-size: 38px; line-height: 1.15;">“Une vraie prise de risque esthétique.”</blockquote>
+<blockquote style="margin: 0; font-family: 'Instrument Serif', 'Playfair Display', serif; font-style: normal; font-size: 38px; line-height: 1.15;">“Une vraie prise de risque esthétique.”</blockquote>
 <figcaption style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8E8880;">Extravafrench</figcaption>
 </figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-<blockquote style="margin: 0; font-family: 'Instrument Serif', serif; font-style: normal; font-size: 38px; line-height: 1.15;">“Sexy, languorous, lazy.”</blockquote>
+<blockquote style="margin: 0; font-family: 'Instrument Serif', 'Playfair Display', serif; font-style: normal; font-size: 38px; line-height: 1.15;">“Sexy, languorous, lazy.”</blockquote>
 <figcaption style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #8E8880;">Radio Nova · playlist NOVA 2026</figcaption>
 </figure>
 </div>
@@ -107,12 +114,12 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 </div>
 <div style="flex: 3 1 560px; min-width: 0; display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px;">
 <div style="flex: none; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/supernova-na-chystu-vodu.mp4" poster="/media/supernova-poster.jpg" controls playsinline preload="metadata" aria-label="Na Chystu Vodu, Funkinbiz at the Supernova 2024 semi-final, 3 minutes" style="display: block; height: 360px; width: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #000;"></video>
+<video src="/media/supernova-na-chystu-vodu.mp4" poster="/media/supernova-poster.jpg" controls preload="metadata" aria-label="Na Chystu Vodu, Funkinbiz at the Supernova 2024 semi-final, 3 minutes" style="display: block; height: 360px; width: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #000;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Na Chystu Vodu</span>
 <a href="https://youtu.be/vpCsCc1klZ4" style="font-size: 13px; color: #C9A46A;">Voir sur la chaîne de Supernova</a>
 </div>
 <div style="flex: none; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/ostansya.mp4" poster="/media/ostansya-poster.jpg" controls playsinline preload="metadata" aria-label="Ostansya, live session with the full band, 2 minutes 49 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000;"></video>
+<video src="/media/ostansya.mp4" poster="/media/ostansya-poster.jpg" controls preload="metadata" aria-label="Ostansya, live session with the full band, 2 minutes 49 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Останься</span>
 <span style="font-size: 13px; color: #A39C91;">Session live</span>
 </div>
@@ -128,17 +135,17 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 </div>
 <div style="flex: 3 1 560px; min-width: 0; display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px;">
 <div style="flex: none; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/tallinn.mp4" poster="/media/tallinn-poster.jpg" controls playsinline preload="metadata" aria-label="Funkinbiz trio live in Tallinn: different songs, the band up close and a full dance floor, 1 minute 48 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000;"></video>
+<video src="/media/tallinn.mp4" poster="/media/tallinn-poster.jpg" controls preload="metadata" aria-label="Funkinbiz trio live in Tallinn: different songs, the band up close and a full dance floor, 1 minute 48 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">New York vibes</span>
 <span style="font-size: 13px; color: #A39C91;">Terminal de croisière, Tallinn</span>
 </div>
 <div style="flex: none; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/tini.mp4" poster="/media/tini-poster.jpg" controls playsinline preload="metadata" aria-label="Тіні, acoustic trio with double bass, 47 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000;"></video>
+<video src="/media/tini.mp4" poster="/media/tini-poster.jpg" controls preload="metadata" aria-label="Тіні, acoustic trio with double bass, 47 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 9 / 16; object-fit: cover; background: #000;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Тіні</span>
 <span style="font-size: 13px; color: #A39C91;">Acoustique, contrebasse</span>
 </div>
 <div style="flex: none; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/disco-glam.mp4" poster="/media/disco-glam-poster.jpg" controls playsinline preload="metadata" aria-label="Disco glam: Funkinbiz trio at a private party in Riga, pink light, 69 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #000;"></video>
+<video src="/media/disco-glam.mp4" poster="/media/disco-glam-poster.jpg" controls preload="metadata" aria-label="Disco glam: Funkinbiz trio at a private party in Riga, pink light, 69 seconds" style="display: block; height: 360px; width: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #000;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Disco glam</span>
 <span style="font-size: 13px; color: #A39C91;">Soirée privée, Riga</span>
 </div>
@@ -193,12 +200,12 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
 <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/krome-lyubvi.mp4" poster="/media/krome-lyubvi-poster.jpg" controls playsinline preload="metadata" aria-label="Krome lyubvi, music video: Kirill reclining in an armchair in front of a white light bar, 3 minutes 6 seconds" style="display: block; width: 100%; aspect-ratio: 1280 / 536; object-fit: cover; background: #000;"></video>
+<video src="/media/krome-lyubvi.mp4" poster="/media/krome-lyubvi-poster.jpg" controls preload="metadata" aria-label="Krome lyubvi, music video: Kirill reclining in an armchair in front of a white light bar, 3 minutes 6 seconds" style="display: block; width: 100%; aspect-ratio: 1280 / 536; object-fit: cover; background: #000;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">Кроме любви · clip</span>
 <span style="font-size: 13px; color: #6B655D;">DOP Makar Borisov</span>
 </div>
 <div style="flex: 1 1 220px; max-width: 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
-<video src="/media/ma-melodie.mp4" poster="/media/ma-melodie-poster.jpg" controls playsinline preload="metadata" aria-label="ma mélodie: Kirill jumping and changing outfits mid-air against a white backdrop, 24 seconds" style="display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #E9EBEA;"></video>
+<video src="/media/ma-melodie.mp4" poster="/media/ma-melodie-poster.jpg" controls preload="metadata" aria-label="ma mélodie: Kirill jumping and changing outfits mid-air against a white backdrop, 24 seconds" style="display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; background: #E9EBEA;"></video>
 <span style="font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.02em;">ma mélodie · reel</span>
 <span style="font-size: 13px; color: #6B655D;">DOP Artur Kryuk</span>
 </div>
@@ -210,7 +217,7 @@ a{color:#EFEAE0}a:hover{color:#C9A46A}
 <div style="max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start;">
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px;">
 <h2 style="margin: 0; font-family: Oswald, sans-serif; font-weight: 500; font-size: 88px; line-height: 0.98; text-transform: uppercase; color: #EFEAE0;">Pas l’explosion.<br>La connexion.</h2>
-<p style="margin: 0; max-width: 620px; font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1.3; color: #D9D3C8;">Une avant-pop de Riga qui sait murmurer et sait embraser. Une voix qui a grandi entre l’opéra et la rue, et qui chante dans la langue que demande la chanson.</p>
+<p style="margin: 0; max-width: 620px; font-family: 'Instrument Serif', 'Playfair Display', serif; font-size: 32px; line-height: 1.3; color: #D9D3C8;">Une avant-pop de Riga qui sait murmurer et sait embraser. Une voix qui a grandi entre l’opéra et la rue, et qui chante dans la langue que demande la chanson.</p>
 <p style="margin: 0; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #8E8880;">L’amour est la seule langue que nous parlons tous</p>
 <div style="margin-top: 24px; padding-top: 32px; border-top: 1px solid #2A2826; display: flex; flex-direction: column; gap: 20px;">
 <h3 style="margin: 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #8E8880; font-weight: 500;">Faits</h3>
